@@ -27,7 +27,7 @@ public class Sorting {
         *    1. Bubble Sort
         ************************/
         BubbleSort bubble = new BubbleSort();
-        bubble.bubbleSort(arr);
+        //bubble.bubbleSort(arr);
 	    System.out.println("\n\nThe Bubble Sort:");
 	    ob.printArray(arr);
 	    
@@ -35,7 +35,7 @@ public class Sorting {
 	    /************************
         *    2. Recursive Bubble Sort
         ************************/
-	    bubble.recursiveBubbleSort(arr,n);
+	    //bubble.recursiveBubbleSort(arr,n);
 	    System.out.println("\n\nThe recursive Bubble Sort:");
 	    ob.printArray(arr);
 	    
@@ -44,7 +44,7 @@ public class Sorting {
         *    3. Insertion Sort
         ************************/
 	    InsertionSort insertion = new InsertionSort();
-	    insertion.insertionSort(arr);
+	    //insertion.insertionSort(arr);
 	    System.out.println("\n\nThe Insertion Sort:");
 	    ob.printArray(arr);
 
@@ -52,17 +52,24 @@ public class Sorting {
 	    /************************
         *    4. Recursive Insertion Sort
         ************************/
-	    insertion.recursiveInsertionSort(arr,n);
+	    //insertion.recursiveInsertionSort(arr,n);
 	    System.out.println("\n\nThe  Recursive Insertion Sort:");
 	    ob.printArray(arr);
 	    /************************
         *    5. Selection Sort
         ************************/
 	    SelectionSort selection = new SelectionSort();
-	    selection.selectionSort(arr);
+	    //selection.selectionSort(arr);
 	    System.out.println("\n\nThe Selection Sort:");
 	    ob.printArray(arr);
-    
+	    
+	    MergeSort mergesort = new MergeSort();
+	    mergesort.sort(arr, 0, n-1);
+	    System.out.println("\n\nThe Merge Sort:");
+	    ob.printArray(arr);
+	    
+	    
+	    
 	
 	}	
 }
