@@ -1,48 +1,6 @@
 import java.util.*;
-public class Sorting {
 
-	void bubbleSort(int arr[]){
-		int n= arr.length;
-		for(int i=0;i<n-1;i++){
-			for(int j=0;j<n-i-1;j++){
-				if(arr[j]>arr[j+1])
-				{
-					int temp= arr[j];
-					arr[j]=arr[j+1];
-					arr[j+1]=temp;
-				}
-			}
-		}
-	}
-	
-	void insertion(int arr[]){
-		int temp;
-		int n=arr.length;
-        for (int i = 1; i < n; i++) {
-            for(int j = i ; j > 0 ; j--){
-                if(arr[j] < arr[j-1]){
-                    temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                }
-            }
-        }
-    }
-	
-	void Selection(int arr[]){
-		for (int i = 0; i < arr.length - 1; i++)  
-        {  
-            int index = i;  
-            for (int j = i + 1; j < arr.length; j++){  
-                if (arr[j] < arr[index]){  
-                    index = j;//searching for lowest index  
-                }  
-            }  
-            int smallerNumber = arr[index];   
-            arr[index] = arr[i];  
-            arr[i] = smallerNumber;  
-        }  
-    }  
+public class Sorting {	
 	
 	void printArray(int arr[]){
         int n = arr.length; 
@@ -64,18 +22,45 @@ public class Sorting {
         for(int i=0;i<n;i++){
             arr[i]=s.nextInt();
         }
-	    ob.bubbleSort(arr);
+        
+        /************************
+        *    1. Bubble Sort
+        ************************/
+        BubbleSort bubble = new BubbleSort();
+        bubble.bubbleSort(arr);
 	    System.out.println("\n\nThe Bubble Sort:");
 	    ob.printArray(arr);
 	    
-	    ob.insertion(arr);
-	    System.out.println("\n\nThe Insertion Sort:");
+	    
+	    /************************
+        *    2. Recursive Bubble Sort
+        ************************/
+	    bubble.recursiveBubbleSort(arr,n);
+	    System.out.println("\n\nThe recursive Bubble Sort:");
 	    ob.printArray(arr);
 	    
-	    ob.Selection(arr);
+
+	    /************************
+        *    3. Insertion Sort
+        ************************/
+	    InsertionSort insertion = new InsertionSort();
+	    insertion.insertionSort(arr);
+	    System.out.println("\n\nThe Insertion Sort:");
+	    ob.printArray(arr);
+
+	    
+	    /************************
+        *    4. Recursive Insertion Sort
+        ************************/
+
+	    /************************
+        *    5. Selection Sort
+        ************************/
+	    SelectionSort selection = new SelectionSort();
+	    selection.selectionSort(arr);
 	    System.out.println("\n\nThe Selection Sort:");
 	    ob.printArray(arr);
-    } 
-		
-		
+    
+	
+	}	
 }
