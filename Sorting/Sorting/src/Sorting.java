@@ -55,6 +55,7 @@ public class Sorting {
 	    //insertion.recursiveInsertionSort(arr,n);
 	    System.out.println("\n\nThe  Recursive Insertion Sort:");
 	    ob.printArray(arr);
+	    
 	    /************************
         *    5. Selection Sort
         ************************/
@@ -63,13 +64,20 @@ public class Sorting {
 	    System.out.println("\n\nThe Selection Sort:");
 	    ob.printArray(arr);
 	    
+	    /************************
+	     *   6. Merge Sort
+	     ************************/	    
 	    MergeSort mergesort = new MergeSort();
-	    mergesort.sort(arr, 0, n-1);
+	    //mergesort.sort(arr, 0, n-1);
 	    System.out.println("\n\nThe Merge Sort:");
 	    ob.printArray(arr);
 	    
-	    
-	    
-	
+	    /************************
+	     *   7. Quick Sort
+	     ************************/	    
+	    QuickSort quicksort = new QuickSort();
+	    quicksort.sort(arr, 0, n-1);
+	    System.out.println("\n\nThe Quick Sort:");
+	    ob.printArray(arr);
 	}	
 }
