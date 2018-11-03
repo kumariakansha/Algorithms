@@ -52,7 +52,9 @@ public class Sorting {
 	    /************************
         *    4. Recursive Insertion Sort
         ************************/
-
+	    insertion.recursiveInsertionSort(arr,n);
+	    System.out.println("\n\nThe  Recursive Insertion Sort:");
+	    ob.printArray(arr);
 	    /************************
         *    5. Selection Sort
         ************************/
