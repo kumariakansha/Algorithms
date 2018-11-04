@@ -19,35 +19,39 @@ public class SearchingAlgorithms {
 		System.out.println("\n\nArray:");
         for (int i=0; i<n; ++i) 
             System.out.println(arr[i]);
-	}
-	static void search(){
-		System.out.println("\nEnter the element to be searched");
-		int v=scn.nextInt();
-	    
-		scn.close();
-	
-		int count1=0;
-		for (int i=0;i<n;i++){
-			if(arr[i]==v){
-				count1++;
-				if(count1 == 1){
-					System.out.println("\nElement Present at Locations:\n" + (i+1));
-				}
-				else{
-					System.out.println(i+1);
-				}
-			}
-		}
-		if(count1==0){
-			System.out.println("\nThe element is not present at any locations");
-		}
-	}
+	}		
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
-        
-        SearchingAlgorithms.inputArray();
-        SearchingAlgorithms.printArray();
-        SearchingAlgorithms.search();
-        }
-	}
+		System.out.println("\n\nSearching Algorithms");
+		System.out.println("\n\n1.Linear Search");
+		System.out.println("\n\n2.Binary Search");
+		System.out.println("\n\nEnter your option 1/2:");
+		int c= scn.nextInt();
+		int v=0;
+		switch(c){
+		case 1:
+			
+			linearSearch srch= new linearSearch();
+			SearchingAlgorithms.inputArray();
+			System.out.println("\nEnter the element to be searched");
+	   	    v=scn.nextInt();
+	   	    scn.close();
+			srch.search(arr, v);
+			break;
+		case 2:
+			
+			binarySearch bsrch = new binarySearch();
+			SearchingAlgorithms.inputArray();
+			System.out.println("\nEnter the element to be searched");
+	   	    v=scn.nextInt();
+	   	    scn.close();
+	   	    bsrch.search(arr,v,0,n-1);
+	   	    break;
+        default: System.out.println("The wrong option chosen:");
+            break;
+   	    
+		}
+       
+    }
+}
