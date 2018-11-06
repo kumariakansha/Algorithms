@@ -26,7 +26,8 @@ public class SearchingAlgorithms {
 		System.out.println("\n\nSearching Algorithms");
 		System.out.println("\n\n1.Linear Search");
 		System.out.println("\n\n2.Binary Search");
-		System.out.println("\n\nEnter your option 1/2:");
+		System.out.println("\n\n2.Jump  Search");
+		System.out.println("\n\nEnter your option 1/2/3:");
 		int c= scn.nextInt();
 		int v=0;
 		switch(c){
@@ -47,6 +48,15 @@ public class SearchingAlgorithms {
 	   	    v=scn.nextInt();
 	   	    scn.close();
 	   	    bsrch.search(arr,v,0,n-1);
+	   	    break;
+	   case 3:
+		   JumpSearch Jsrch= new JumpSearch();
+		   SearchingAlgorithms.inputArray();
+			System.out.println("\nEnter the element to be searched");
+	   	    v=scn.nextInt();
+	   	    scn.close();
+	   	    int z= Jsrch.search(arr, n, v);
+	   	    System.out.println( "The number is present at the location:" + z);
 	   	    break;
         default: System.out.println("The wrong option chosen:");
             break;
