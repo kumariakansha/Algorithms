@@ -5,7 +5,7 @@ public class SearchingAlgorithms {
 	static int n;
 	static Scanner scn=new Scanner(System.in);
 	static void inputArray(){
-		System.out.println("\nLinear Search:");
+		System.out.println("\n Searching Operation:");
         System.out.println("\nEnter the number of Elements:");
 		
 	    n=scn.nextInt();
@@ -26,8 +26,9 @@ public class SearchingAlgorithms {
 		System.out.println("\n\nSearching Algorithms");
 		System.out.println("\n\n1.Linear Search");
 		System.out.println("\n\n2.Binary Search");
-		System.out.println("\n\n2.Jump  Search");
-		System.out.println("\n\nEnter your option 1/2/3:");
+		System.out.println("\n\n3.Jump  Search");
+		System.out.println("\n\n4. Interpolation  Search");
+		System.out.println("\n\nEnter your option 1/2/3/4:");
 		int c= scn.nextInt();
 		int v=0;
 		switch(c){
@@ -57,6 +58,15 @@ public class SearchingAlgorithms {
 	   	    scn.close();
 	   	    int z= Jsrch.search(arr, n, v);
 	   	    System.out.println( "The number is present at the location:" + z);
+	   	    break;
+	   case 4: 
+		   InterpolationSearch Isearch = new InterpolationSearch();
+		   SearchingAlgorithms.inputArray();
+			System.out.println("\nEnter the element to be searched");
+	   	    v=scn.nextInt();
+	   	    scn.close();
+	   	    int y=Isearch.search(arr, n, v);
+	   	    System.out.println("The element is present at the location:" + (y+1));
 	   	    break;
         default: System.out.println("The wrong option chosen:");
             break;
